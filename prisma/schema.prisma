@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+  config = {
+    engineType = "binary"
+  }
+}
+
+// Define your database model
+model Contact {
+  id              Int      @id @default(autoincrement())
+  name            String
+  companyName     String
+  companyType     String
+  serviceType     String
+  techProblems    String
+  securityAudit   String
+  contactEmail    String
+  contactNumber   String
+}
+
+model Subscriber {
+  id              Int      @id @default(autoincrement())
+  email           String   @unique
+}
